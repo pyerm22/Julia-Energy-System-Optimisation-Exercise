@@ -59,12 +59,14 @@ function run_economic_dispatch(n=1)
         sum(c[g] * q[g, t] for g in G, t in T) + sum(ls[t] * VOLL for t in T)
     )
 
+    @constraint(m, [t = T], sum(q[g, t] for g in G) == D[t] - ls[t])
+
     @constraint(m, [g = G, t = T], sum(q[g, t]) <= AF[g][t] * cap[g])
 
     @suppress optimize!(m)
 
     lsvals = value.(ls)
-    ENS = NaN
+    ENS = sum(lsvals)
     return ENS
 end
 
@@ -73,7 +75,7 @@ function run_economic_dispatches(n_samples=1)
     for i in 1:n_samples
         push!(ENS_vec, run_economic_dispatch(i))
     end
-    EENS = NaN
+    EENS = mean(ENS_vec)
     return EENS
 end
 
