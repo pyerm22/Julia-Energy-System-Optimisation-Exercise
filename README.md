@@ -14,12 +14,29 @@ You may find the following resources useful:
 
 An economic dispatch problem looks like:
 
-$$
-\min \sum_{g \in G} c_g \cdot q_{g,t} + VOLL \cdot ls_{t} \\ 
-s.t. \\
-\sum_{g \in G} q_{g,t} = D_t - ls_t \quad \forall t \in T \\
-q_{g,t} \leq AF_{g,t} \cdot cap_g \quad \forall g \in G, \; t \in T 
-$$
+<!-- $$
+\min \sum_{g \in G} c_g \cdot q_{g,t} + VOLL \cdot ls_{t}
+$$ --> 
+
+<div align="center"><img style="background: white;" src="./svg/hB5fsue1r1.svg"></div>
+
+<!-- $$
+s.t.
+$$ --> 
+
+<div align="center"><img style="background: white;" src="./svg/bExRIrOSgr.svg"></div>
+
+<!-- $$
+\sum_{g \in G} q_{g,t} = D_t - ls_t \quad \forall t \in T
+$$ --> 
+
+<div align="center"><img style="background: white;" src="./svg/whiun9FWWy.svg"></div>
+
+<!-- $$
+q_{g,t} \leq AF_{g,t} \cdot cap_g \quad \forall g \in G, \; t \in T
+$$ --> 
+
+<div align="center"><img style="background: white;" src="./svg/YZ5Yq3FNW3.svg"></div>
 
 where:
 
@@ -32,12 +49,16 @@ where:
 
 The energy not served for one instance of the economic dispatch problem is given by:
 
-$$
+<!-- $$
 ENS = \sum_{t \in T} ls_t
-$$
+$$ --> 
+
+<div align="center"><img style="background: white;" src="./svg/rujXAfwizv.svg"></div>
 
 The expected energy not served for `n` instances of the economic dispatch problem is given by:
 
-$$
+<!-- $$
 EENS = \frac{1}{n} \sum_{i = 1:n} \sum_{t \in T} ls_t
-$$
+$$ --> 
+
+<div align="center"><img style="background: white;" src="./svg/M0oYzicN6v.svg"></div>
